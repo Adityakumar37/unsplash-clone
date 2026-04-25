@@ -16,7 +16,8 @@ const Home = () => {
         const data = await fetchPhotos(page);
         setPhotos((prev) => (page === 1 ? data : [...prev, ...data]));
       } catch (err) {
-        setError('Failed to load photos. Please try again later.');
+        console.error('Error fetching photos:', err);
+        setError(`Failed to load photos: ${err.message || 'Please try again later.'}`);
       } finally {
         setLoading(false);
       }

@@ -4,14 +4,16 @@ import Sidebar from './components/Sidebar/Sidebar'
 import Home from './pages/Home'
 import './App.css'
 
-const PhotoDetail = () => <div>Photo Detail</div>
-const SearchResults = () => <div>Search Results</div>
+import PhotoDetail from './pages/PhotoDetail'
+import SearchResults from './pages/SearchResults'
+import CategoryBar from './components/CategoryBar/CategoryBar'
 
 function App() {
   return (
     <BrowserRouter>
       <div className="app-shell">
         <Navbar />
+        <CategoryBar />
         <div className="app-body">
           <Sidebar />
           <main className="main-content">

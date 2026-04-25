@@ -20,6 +20,9 @@ const SearchResults = () => {
       setResults(data.results || [])
       setTotal(data.total || 0)
       setLoading(false)
+    }).catch(err => {
+      console.error('Search failed:', err)
+      setLoading(false)
     })
   }, [query])
 

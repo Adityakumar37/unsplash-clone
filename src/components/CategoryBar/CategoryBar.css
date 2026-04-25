@@ -1,0 +1,58 @@
+.category-bar-wrapper {
+  border-bottom: 1px solid #d1d1d1;
+  background: white;
+  position: sticky;
+  top: 62px; /* Assuming Navbar is around 62px tall */
+  z-index: 10;
+}
+
+.category-bar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 20px;
+  height: 56px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none; /* Firefox */
+}
+
+.category-bar::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.category-link {
+  text-decoration: none;
+  color: #767676;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.1s ease;
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.category-link:hover {
+  color: #111;
+}
+
+.category-link.active {
+  color: #111;
+}
+
+.category-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #111;
+}
+
+.category-divider {
+  width: 1px;
+  height: 32px;
+  background-color: #d1d1d1;
+}
