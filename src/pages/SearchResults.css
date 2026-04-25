@@ -35,11 +35,15 @@
 }
 
 @media (max-width: 900px) {
-  .masonry-grid { columns: 2; }
+  .masonry-grid {
+    columns: 2;
+  }
 }
 
 @media (max-width: 600px) {
-  .masonry-grid { columns: 1; }
+  .masonry-grid {
+    columns: 1;
+  }
 }
 
 .loading-text {
@@ -64,4 +68,6 @@
   cursor: pointer;
 }
 
-.load-more button:hover { background: #333; }
+.load-more button:hover {
+  background: #333;
+}

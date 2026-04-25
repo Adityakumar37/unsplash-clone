@@ -33,7 +33,7 @@ const Home = () => {
   return (
     <div className="home-container">
       {error && <div className="error-message">{error}</div>}
-      
+
       <div className="masonry-grid">
         {photos.map((photo, index) => (
           <PhotoCard key={`${photo.id}-${index}`} photo={photo} />

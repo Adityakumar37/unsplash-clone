@@ -19,8 +19,8 @@ const CategoryBar = () => {
   return (
     <div className="category-bar-wrapper">
       <nav className="category-bar">
-        <NavLink 
-          to="/feed" 
+        <NavLink
+          to="/feed"
           className={({ isActive }) => isActive ? "category-link active" : "category-link"}
           end
         >
@@ -31,7 +31,7 @@ const CategoryBar = () => {
           <NavLink
             key={category}
             to={`/search?q=${encodeURIComponent(category)}`}
-            className={({ isActive, isPending }) => 
+            className={({ isActive, isPending }) =>
               // React Router NavLink doesn't automatically match search params for isActive,
               // so we handle styling via CSS, or we can just use normal links and check search params manually.
               "category-link"

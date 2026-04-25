@@ -2,7 +2,8 @@
   border-bottom: 1px solid #d1d1d1;
   background: white;
   position: sticky;
-  top: 62px; /* Assuming Navbar is around 62px tall */
+  top: 62px;
+  /* Assuming Navbar is around 62px tall */
   z-index: 10;
 }
 
@@ -14,11 +15,13 @@
   height: 56px;
   overflow-x: auto;
   white-space: nowrap;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .category-bar::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+  display: none;
+  /* Chrome/Safari */
 }
 
 .category-link {
