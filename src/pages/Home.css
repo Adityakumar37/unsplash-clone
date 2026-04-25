@@ -1,53 +1,73 @@
-.home-container {
-  max-width: 1200px;
+/* ── Home ── */
+.home {
+  padding: 24px 20px 60px;
+  max-width: 1380px;
   margin: 0 auto;
-  padding: 20px;
 }
 
 .masonry-grid {
   column-count: 3;
-  column-gap: 20px;
+  column-gap: 12px;
 }
 
-@media (max-width: 900px) {
-  .masonry-grid {
-    column-count: 2;
-  }
+@media (max-width: 860px) { .masonry-grid { column-count: 2; } }
+@media (max-width: 540px) {
+  .masonry-grid { column-count: 1; }
+  .home { padding: 16px 12px 40px; }
 }
 
-@media (max-width: 600px) {
-  .masonry-grid {
-    column-count: 1;
-  }
+/* Skeleton */
+.skeleton {
+  break-inside: avoid;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  background: var(--surface);
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Footer */
+.home-footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 32px;
 }
 
 .load-more-btn {
-  display: block;
-  margin: 40px auto;
-  padding: 12px 24px;
-  background-color: #111;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
+  padding: 12px 28px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
 
 .load-more-btn:hover {
-  background-color: #333;
+  border-color: var(--text-primary);
+  background: var(--surface);
 }
 
-.loading-spinner {
-  text-align: center;
-  margin: 40px 0;
-  font-size: 18px;
-  color: #666;
+.spinner {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  border-top-color: var(--text-primary);
+  animation: spin 0.7s linear infinite;
 }
 
-.error-message {
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.home-error {
   text-align: center;
-  color: #ff4444;
-  margin: 20px 0;
-  font-size: 16px;
+  color: var(--text-muted);
+  font-size: 14px;
+  padding: 40px 0;
 }
