@@ -1,4 +1,4 @@
-const ACCESS_KEY = 'YOUR_UNSPLASH_ACCESS_KEY'
+const ACCESS_KEY = import.meta.env.VITE_PEXELS_API_KEY
 const BASE_URL = 'https://api.unsplash.com'
 
 const request = async (path) => {
