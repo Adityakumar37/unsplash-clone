@@ -1,10 +1,16 @@
+import { Navigate } from 'react-router-dom'
 import { getCurrentUser } from '../services/auth'
 import ProfileTabs from '../components/ProfileTabs/ProfileTabs'
 import './Profile.css'
 
 function Profile() {
   const currentUser = getCurrentUser()
-  const displayName = currentUser?.name || 'Devesh Kumar'
+
+  if (!currentUser) {
+    return <Navigate to="/login" replace />
+  }
+
+  const displayName = currentUser.name || 'Guest User'
   const initials = displayName
     .split(' ')
     .filter(Boolean)
@@ -27,7 +33,7 @@ function Profile() {
             </button>
           </div>
           <p className="profile-description">
-            Download free, beautiful high-quality photos curated by {displayName.split(' ')[0] || 'you'}.
+            Download free, beautiful high-quality photos curated by {displayName.split(' ')[0]}.
           </p>
         </div>
       </header>

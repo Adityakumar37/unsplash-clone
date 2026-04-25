@@ -17,7 +17,7 @@ const Home = () => {
         setPhotos((prev) => (page === 1 ? data : [...prev, ...data]));
       } catch (err) {
         console.error('Error fetching photos:', err);
-        setError(`Failed to load photos: ${err.message || 'Please try again later.'}`);
+        setError(`Failed to load photos. Please check your API key in the .env file and try again. (${err.message})`);
       } finally {
         setLoading(false);
       }

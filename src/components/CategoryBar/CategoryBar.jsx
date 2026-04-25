@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useSearchParams } from 'react-router-dom';
 import './CategoryBar.css';
 
 const categories = [
@@ -16,6 +16,9 @@ const categories = [
 ];
 
 const CategoryBar = () => {
+  const [searchParams] = useSearchParams();
+  const currentQuery = searchParams.get('q');
+
   return (
     <div className="category-bar-wrapper">
       <nav className="category-bar">
@@ -31,11 +34,7 @@ const CategoryBar = () => {
           <NavLink
             key={category}
             to={`/search?q=${encodeURIComponent(category)}`}
-            className={({ isActive, isPending }) =>
-              // React Router NavLink doesn't automatically match search params for isActive,
-              // so we handle styling via CSS, or we can just use normal links and check search params manually.
-              "category-link"
-            }
+            className={`category-link ${currentQuery === category ? 'active' : ''}`}
           >
             {category}
           </NavLink>
