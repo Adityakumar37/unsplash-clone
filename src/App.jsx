@@ -7,6 +7,11 @@ import './App.css'
 import PhotoDetail from './pages/PhotoDetail'
 import SearchResults from './pages/SearchResults'
 import CategoryBar from './components/CategoryBar/CategoryBar'
+import Login from './pages/Login'
+import Explore from './pages/Explore'
+import Signup from './pages/Signup'
+import Create from './pages/Create'
+import Profile from './pages/Profile'
 
 function App() {
   return (
@@ -20,6 +25,11 @@ function App() {
             <Routes>
               <Route path="/" element={<Navigate to="/feed" replace />} />
               <Route path="/feed" element={<Home />} />
+              <Route path="/explore" element={<Explore />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/create" element={<Create />} />
+              <Route path="/profile" element={<Profile />} />
               <Route path="/photo/:id" element={<PhotoDetail />} />
               <Route path="/search" element={<SearchResults />} />
             </Routes>

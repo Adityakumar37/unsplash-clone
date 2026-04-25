@@ -113,6 +113,23 @@
   background: #333;
 }
 
+.detail-wishlist {
+  border: 1px solid #d0d0d0;
+  background: #ffffff;
+  color: #222222;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.detail-wishlist.saved {
+  border-color: #f3b8b8;
+  background: #fff2f2;
+  color: #b61111;
+}
+
 .detail-tags {
   display: flex;
   flex-wrap: wrap;

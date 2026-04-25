@@ -1,16 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { fetchPhoto } from '../services/unsplash'
+import { isWishlisted, toggleWishlistPhoto } from '../services/userGallery'
 import './PhotoDetail.css'
 
 const PhotoDetail = () => {
   const { id } = useParams()
   const navigate = useNavigate()
   const [photo, setPhoto] = useState(null)
+  const [saved, setSaved] = useState(false)
 
   useEffect(() => {
-    fetchPhoto(id).then(setPhoto)
+    fetchPhoto(id).then((data) => {
+      setPhoto(data)
+      setSaved(isWishlisted(data.id))
+    })
   }, [id])
+
+  const handleToggleWishlist = () => {
+    if (!photo) {
+      return
+    }
+
+    const nextState = toggleWishlistPhoto(photo)
+    setSaved(nextState)
+  }
 
   if (!photo) return <div className="detail-loading">Loading...</div>
 
@@ -54,6 +68,13 @@ const PhotoDetail = () => {
           >
             Download Free
           </a>
+          <button
+            type="button"
+            className={`detail-wishlist ${saved ? 'saved' : ''}`}
+            onClick={handleToggleWishlist}
+          >
+            {saved ? 'Remove from wishlist' : 'Save to wishlist'}
+          </button>
           {photo.tags?.length > 0 && (
             <div className="detail-tags">
               {photo.tags.slice(0, 10).map(t => (

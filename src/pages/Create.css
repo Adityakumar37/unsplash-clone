@@ -1,0 +1,158 @@
+.create-page {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.create-card {
+  width: 100%;
+  max-width: 760px;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+}
+
+.create-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 6px;
+}
+
+.create-subtitle {
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.create-message {
+  margin: 0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+}
+
+.create-error {
+  background: #fdeceb;
+  border: 1px solid #f4c9c6;
+  color: #912018;
+}
+
+.create-success {
+  background: #e8f7ee;
+  border: 1px solid #bee7ca;
+  color: #0b5e2b;
+}
+
+.upload-field {
+  border: 1.5px dashed #b8b8b8;
+  border-radius: 12px;
+  padding: 16px;
+  background: #fafafa;
+}
+
+.upload-label {
+  display: block;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 10px;
+}
+
+.upload-input {
+  display: block;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+.upload-hint {
+  display: inline-block;
+  margin-top: 8px;
+  color: #777777;
+  font-size: 0.82rem;
+}
+
+.file-meta {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #fcfcfc;
+}
+
+.file-name,
+.file-size {
+  margin: 0;
+  color: #333333;
+  font-size: 0.9rem;
+}
+
+.preview-wrap {
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f7f7f7;
+}
+
+.preview-image {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 0.87rem;
+  color: #333333;
+  font-weight: 600;
+}
+
+.input-group input,
+.input-group textarea {
+  border: 1.5px solid #d1d1d1;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  outline: none;
+  background: #ffffff;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #111111;
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.08);
+}
+
+.submit-photo-btn {
+  height: 46px;
+  border: none;
+  border-radius: 10px;
+  background: #111111;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-photo-btn:hover {
+  background: #000000;
+}
+
+@media (max-width: 720px) {
+  .create-card {
+    padding: 20px;
+  }
+}

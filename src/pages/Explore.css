@@ -1,0 +1,57 @@
+/* ── Explore page ──────────────────────────────── */
+
+.explore-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+/* ── Hero banner ──────────────────────────────── */
+
+.explore-hero {
+  padding: 48px 0 36px;
+  text-align: center;
+  animation: heroFadeIn 0.5s ease;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.explore-title {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #111111;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+}
+
+.explore-subtitle {
+  font-size: 1.05rem;
+  color: #767676;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── Reuse shared grid / button tokens ─────── */
+/* masonry-grid, load-more-btn, loading-spinner,
+   error-message are defined in Home.css          */
+
+@media (max-width: 600px) {
+  .explore-title {
+    font-size: 1.75rem;
+  }
+
+  .explore-hero {
+    padding: 32px 0 24px;
+  }
+}

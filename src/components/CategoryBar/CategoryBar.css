@@ -3,7 +3,6 @@
   background: white;
   position: sticky;
   top: 62px;
-  /* Assuming Navbar is around 62px tall */
   z-index: 10;
 }
 

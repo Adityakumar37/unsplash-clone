@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { isWishlisted, toggleWishlistPhoto } from '../../services/userGallery'
 import './PhotoCard.css'
 
 const PhotoCard = ({ photo }) => {
   const navigate = useNavigate()
-  const [liked, setLiked] = useState(false)
+  const [saved, setSaved] = useState(isWishlisted(photo.id))
 
   const handleDownload = async (e) => {
     e.stopPropagation()
@@ -22,6 +23,12 @@ const PhotoCard = ({ photo }) => {
       // fallback: open in new tab
       window.open(photo.links?.download || photo.urls?.regular, '_blank')
     }
+  }
+
+  const handleToggleWishlist = (event) => {
+    event.stopPropagation()
+    const nextState = toggleWishlistPhoto(photo)
+    setSaved(nextState)
   }
 
   return (
@@ -45,13 +52,13 @@ const PhotoCard = ({ photo }) => {
         {/* Top actions */}
         <div className="card-top">
           <button
-            className={`card-action-btn${liked ? ' liked' : ''}`}
-            onClick={(e) => { e.stopPropagation(); setLiked(p => !p) }}
-            aria-label="Like photo"
-            title="Like"
+            className={`card-action-btn${saved ? ' liked' : ''}`}
+            onClick={handleToggleWishlist}
+            aria-label={saved ? 'Remove from wishlist' : 'Add to wishlist'}
+            title={saved ? 'Saved' : 'Save'}
           >
             <svg width="16" height="16" viewBox="0 0 24 24"
-              fill={liked ? 'currentColor' : 'none'}
+              fill={saved ? 'currentColor' : 'none'}
               stroke="currentColor" strokeWidth="2"
               strokeLinecap="round" strokeLinejoin="round">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />

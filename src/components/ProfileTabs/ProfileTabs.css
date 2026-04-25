@@ -1,0 +1,90 @@
+.profile-tabs-wrap {
+  margin-top: 28px;
+}
+
+.profile-tabs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 10px;
+}
+
+.profile-tab {
+  border: none;
+  background: transparent;
+  color: #666666;
+  font-size: 0.94rem;
+  font-weight: 600;
+  padding: 8px 2px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.profile-tab.active {
+  color: #111111;
+  border-bottom-color: #111111;
+}
+
+.profile-panel {
+  padding: 22px 0 4px;
+}
+
+.profile-placeholder h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #222222;
+  margin: 0 0 8px;
+}
+
+.profile-placeholder p {
+  margin: 0;
+  color: #808080;
+}
+
+.profile-collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.collection-card {
+  border: 1px solid #ebebeb;
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 12px;
+}
+
+.collection-preview {
+  height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3px;
+  background: #f0f0f0;
+  margin-bottom: 12px;
+}
+
+.preview-main,
+.preview-small {
+  background: #e7e7e7;
+}
+
+.preview-stack {
+  display: grid;
+  gap: 3px;
+}
+
+.collection-title {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #111111;
+}
+
+.collection-meta {
+  margin: 4px 0 0;
+  font-size: 0.84rem;
+  color: #7c7c7c;
+}
